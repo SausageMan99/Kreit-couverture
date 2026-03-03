@@ -95,13 +95,13 @@ export function ServicesGrid() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   <div className="absolute inset-0 bg-[#c70815] opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
                   <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
-                    <p className="text-xs font-semibold tracking-widest uppercase text-[#c70815] mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-2 group-hover:translate-y-0">
+                    <p className="text-xs font-semibold tracking-widest uppercase text-[#c70815] mb-2 opacity-100 translate-y-0 sm:opacity-0 sm:translate-y-2 sm:group-hover:opacity-100 sm:group-hover:translate-y-0 transition-all duration-300">
                       {service.tag}
                     </p>
                     <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight mb-2">
                       {service.title}
                     </h3>
-                    <p className="text-sm text-white/70 mb-4 max-w-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                    <p className="text-sm text-white/70 mb-4 max-w-sm leading-relaxed opacity-100 translate-y-0 sm:opacity-0 sm:translate-y-2 sm:group-hover:opacity-100 sm:group-hover:translate-y-0 transition-all duration-300">
                       {service.description}
                     </p>
                     <span className="inline-flex items-center gap-2 text-white text-sm font-semibold">

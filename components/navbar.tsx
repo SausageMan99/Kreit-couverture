@@ -41,14 +41,16 @@ export function Navbar() {
         style={{ opacity }}
       >
         <Link href="/" className={opacity > 0 ? "pointer-events-auto" : "pointer-events-none"}>
-          <Image
-            src="/logo.svg"
-            alt="Kreit Couverture Mouen"
-            width={140}
-            height={40}
-            priority
-            className="h-10 w-auto"
-          />
+          <div className="rounded-xl px-3 py-1.5 bg-white/60 backdrop-blur-sm shadow-sm">
+            <Image
+              src="/logo.svg"
+              alt="Kreit Couverture Mouen"
+              width={140}
+              height={40}
+              priority
+              className="h-10 w-auto"
+            />
+          </div>
         </Link>
       </div>
 

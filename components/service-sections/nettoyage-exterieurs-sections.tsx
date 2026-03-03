@@ -24,7 +24,7 @@ const sections: ServiceSection[] = [
 export function NettoyageExterieurssSections() {
   return (
     <section className="py-20 md:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-24 md:space-y-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-16 md:space-y-32">
         {sections.map((section, i) => (
           <ServiceBlock key={section.title} section={section} index={i} />
         ))}

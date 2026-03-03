@@ -50,7 +50,7 @@ export function HeroSection({ title, subtitle, imageSrc, isHomepage = false, bre
               alt="Toiture Kreit Couverture"
               fill
               priority
-              className="object-cover opacity-15"
+              className="object-cover opacity-20"
               sizes="100vw"
             />
           </div>
@@ -129,7 +129,7 @@ export function HeroSection({ title, subtitle, imageSrc, isHomepage = false, bre
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.6 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 text-gray-400"
         >
           <span className="text-xs tracking-widest uppercase">Découvrir</span>
           <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
