@@ -1,4 +1,8 @@
-import { MapPin } from "lucide-react"
+"use client"
+
+import { motion, useInView } from "motion/react"
+import { useRef } from "react"
+import { staggerContainer, fadeInUp } from "@/lib/animations"
 
 const VILLES = [
   "Caen", "Bretteville sur Odon", "Fontaine Étoupefour", "Évrecy", "Ifs",
@@ -8,29 +12,46 @@ const VILLES = [
 ]
 
 export function ZoneIntervention() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-80px" })
+
   return (
-    <section className="max-w-6xl mx-auto px-4 py-16">
-      <div className="flex items-center gap-3 mb-6">
-        <MapPin className="text-primary" size={24} />
-        <h2 className="text-2xl font-bold">Notre zone d&apos;intervention — Calvados (14)</h2>
-      </div>
-      <p className="text-muted-foreground mb-6 max-w-2xl">
-        Afin de vous garantir un service de proximité, nous intervenons dans les meilleurs délais dans le Calvados,
-        notamment sur :
-      </p>
-      <div className="flex flex-wrap gap-2">
-        {VILLES.map((ville) => (
-          <span
-            key={ville}
-            className="bg-secondary text-secondary-foreground text-sm px-3 py-1 rounded-full border border-border"
+    <section ref={ref} style={{ backgroundColor: "#F8F6F3" }} className="py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          <motion.p variants={fadeInUp} className="text-xs font-semibold tracking-widest uppercase text-[#c70815] mb-3">
+            Zone d&apos;intervention
+          </motion.p>
+          <motion.h2
+            variants={fadeInUp}
+            className="text-[clamp(32px,4vw,56px)] font-black tracking-tighter text-[#0D0D0D] mb-4 max-w-2xl leading-tight"
           >
-            {ville}
-          </span>
-        ))}
+            Nous intervenons dans tout le Calvados
+          </motion.h2>
+          <motion.p variants={fadeInUp} className="text-gray-500 mb-10 max-w-xl leading-relaxed">
+            Service de proximité, déplacement rapide dans le Calvados (14) et ses environs.
+          </motion.p>
+
+          <motion.div variants={fadeInUp} className="flex flex-wrap gap-2.5">
+            {VILLES.map((ville) => (
+              <span
+                key={ville}
+                className="text-sm font-medium px-4 py-2 rounded-full border border-gray-200 bg-white text-[#374151] hover:border-[#c70815] hover:text-[#c70815] transition-colors cursor-default"
+              >
+                {ville}
+              </span>
+            ))}
+          </motion.div>
+
+          <motion.p variants={fadeInUp} className="text-gray-400 text-sm mt-8">
+            Déplacement et devis gratuit · Prix compétitifs · Intervention urgence · Garantie décennale
+          </motion.p>
+        </motion.div>
       </div>
-      <p className="text-muted-foreground text-sm mt-6">
-        Déplacement et devis gratuit · Prix compétitifs · Intervention urgence
-      </p>
     </section>
   )
 }
