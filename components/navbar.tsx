@@ -1,3 +1,5 @@
+"use client"
+
 import { Home, HardHat, Wrench, PaintRoller, Droplets, Mail } from "lucide-react"
 import { NavBar } from "@/components/ui/tubelight-navbar"
 
